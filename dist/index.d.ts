@@ -4,7 +4,7 @@ interface NextFunction {
     (deferToNext: 'router'): void;
     (deferToNext: 'route'): void;
 }
-interface Response {
+export interface IpInfo {
     ipInfo?: {
         range: [number, number];
         country: string;
@@ -18,6 +18,6 @@ interface Response {
     };
     error?: string;
 }
-export declare const ipInfo: (ip: string | undefined) => Promise<Response>;
+export declare const ipInfo: (ip: string | undefined) => Promise<IpInfo>;
 export declare const ip: (req: IncomingMessage, res: ServerResponse, next: NextFunction) => void;
 export {};

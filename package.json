@@ -1,6 +1,6 @@
 {
   "name": "express-fast-ip",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An express middleware for getting fast information about an IP.",
   "scripts": {
     "build": "tsc",

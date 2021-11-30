@@ -7,7 +7,7 @@ interface NextFunction {
     (deferToNext: 'route'): void
 }
 
-interface Response {
+export interface IpInfo {
     ipInfo?: {
         range: [number, number]
         country: string
@@ -22,7 +22,7 @@ interface Response {
     error?: string
 }
 
-export const ipInfo = async (ip: string | undefined): Promise<Response> => {
+export const ipInfo = async (ip: string | undefined): Promise<IpInfo> => {
     if (!ip) {
         return { error: "Could not fetch ip from request." }
     }
