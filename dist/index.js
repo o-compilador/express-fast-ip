@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ip = exports.ipInfo = void 0;
+const nax_ipware_1 = require("@fullerstack/nax-ipware");
 const geoip = require("fast-geoip");
 const ipInfo = (ip) => __awaiter(void 0, void 0, void 0, function* () {
     if (!ip) {
@@ -31,8 +32,8 @@ const ipInfo = (ip) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.ipInfo = ipInfo;
 const ip = (req, res, next) => {
-    const xForwardedFor = (req.headers['x-forwarded-for'] || '').replace(/:\d+$/, '');
-    const ip = xForwardedFor || req.socket.remoteAddress;
+    var _a;
+    const ip = (_a = new nax_ipware_1.Ipware().getClientIP(req)) === null || _a === void 0 ? void 0 : _a.ip;
     // @ts-ignore
     req.ipInfo = Object.assign({ ip }, (0, exports.ipInfo)(ip));
     next();

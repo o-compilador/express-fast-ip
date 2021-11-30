@@ -1,6 +1,6 @@
 {
   "name": "express-fast-ip",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An express middleware for getting fast information about an IP.",
   "scripts": {
     "build": "tsc",
@@ -23,6 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@fullerstack/nax-ipware": "0.0.9",
     "fast-geoip": "^1.1.47"
   },
   "devDependencies": {

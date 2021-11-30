@@ -3,3 +3,6 @@
 
 ## 0.1.1
 * Export IpInfo interface.
+
+## 0.1.2
+* Add NAX IPware for improving IP retrieval

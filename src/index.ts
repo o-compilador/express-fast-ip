@@ -1,3 +1,4 @@
+import { Ipware } from '@fullerstack/nax-ipware'
 import * as geoip from 'fast-geoip'
 import { IncomingMessage, ServerResponse } from "http"
 
@@ -43,8 +44,7 @@ export const ipInfo = async (ip: string | undefined): Promise<IpInfo> => {
 }
 
 export const ip = (req: IncomingMessage, res: ServerResponse, next: NextFunction) => {
-    const xForwardedFor = ((req.headers['x-forwarded-for'] || '') as string).replace(/:\d+$/, '')
-    const ip = xForwardedFor || req.socket.remoteAddress
+    const ip = new Ipware().getClientIP(req)?.ip
 
     // @ts-ignore
     req.ipInfo = { ip, ...ipInfo(ip) }
