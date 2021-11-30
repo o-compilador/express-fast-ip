@@ -37,7 +37,7 @@ const ip = (req, res, next) => {
     const xForwardedFor = (req.headers['x-forwarded-for'] || '').replace(/:\d+$/, '');
     const ip = xForwardedFor || req.socket.remoteAddress;
     // @ts-ignore
-    req.ipInfo = Object.assign({ ip }, fetchIpInfo(ip));
+    req.ipInfo = Object.assign({ ip }, (0, exports.ipInfo)(ip));
     next();
 };
 exports.ip = ip;

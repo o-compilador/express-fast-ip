@@ -50,6 +50,6 @@ export const ip = (req: IncomingMessage, res: ServerResponse, next: NextFunction
     const ip = xForwardedFor || req.socket.remoteAddress
 
     // @ts-ignore
-    req.ipInfo = { ip, ...fetchIpInfo(ip) }
+    req.ipInfo = { ip, ...ipInfo(ip) }
     next()
 }

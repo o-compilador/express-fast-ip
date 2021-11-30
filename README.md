@@ -1,6 +1,6 @@
 # Express Fast IP
 
-This is an express module for getting IP information using [fast-geoip](https://github.com/onramper/fast-geoip).
+An express module for getting IP information using [fast-geoip](https://github.com/onramper/fast-geoip).
 
 ## Installation
 
