@@ -1,6 +1,6 @@
 {
   "name": "express-fast-ip",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An express middleware for getting fast information about an IP.",
   "scripts": {
     "build": "tsc",
@@ -8,7 +8,7 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/o-compilador/express-ip",
+  "repository": "https://github.com/o-compilador/express-fast-ip",
   "keywords": [
     "express",
     "ip",
