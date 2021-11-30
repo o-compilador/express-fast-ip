@@ -34,9 +34,6 @@ export const ipInfo = async (ip: string | undefined): Promise<Response> => {
         ip = ip.split(':').reverse()[0]
     }
     const lookedUpIP = await geoip.lookup(ip)
-    if ((ip === '127.0.0.1' || ip === '::1')) {
-        return { error: "This won't work on localhost." }
-    }
     if (!lookedUpIP) {
         return { error: "Error occured while trying to process the information." }
     }
